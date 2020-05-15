@@ -1,62 +1,75 @@
 import 'package:flutter/material.dart';
-import 'dart:math';
+import 'package:truth_or_dare/pages/secondPage.dart';
 
-import 'package:truth_or_dare/models/truth.dart';
+
+bool isTruth;
+bool isDare;
 
 class Game extends StatefulWidget {
   @override
   _GameState createState() => _GameState();
 }
 
-var random;
-var index;
-String question;
-
 class _GameState extends State<Game> {
-  generateQue() {
-    var random = Random();
-    index = random.nextInt(5);
-
-    print(index);
-    setState(() {
-      question = truth[index]['que'];
-    });
-  }
-
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    generateQue();
-  }
-
   @override
   Widget build(BuildContext context) {
     // print(truth[index]['id']);
     // print(truth[index]['que']);
+
+    handleTruth() {
+      print('truth tappped!');
+      isTruth = true;
+      Navigator.of(context).push(MaterialPageRoute(builder: (context)=> SecondPage(isDare: false,isTruth: true,)));
+    }
+
+    handleDare() {
+      print('Dare tappped!');
+      isDare = true;
+      Navigator.of(context).push(MaterialPageRoute(builder: (context)=> SecondPage(isDare: true,isTruth: false,)));
+    }
+
     return Scaffold(
       backgroundColor: Theme.of(context).backgroundColor,
-      appBar: AppBar(
-        brightness: Brightness.dark,
-      ),
       body: Center(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text('Truth or dare',style: TextStyle(color: Theme.of(context).primaryColor,fontSize: 30,)),
-            SizedBox(height: 40),
-            Text(question,style: TextStyle(color: Theme.of(context).primaryColor,fontSize: 20,)),
-            
-            IconButton(
-                icon: Icon(
-                  Icons.refresh,
-                  color: Colors.white,
+            GestureDetector(
+              onTap: handleTruth,
+              child: Text(
+                'TRUTH',
+                style: TextStyle(
+                  color: Theme.of(context).primaryColor,
+                  fontSize: 40,
+                  fontFamily: 'Montserrat'
                 ),
-                onPressed: generateQue),
+              ),
+            ),
+            Divider(
+              color: Colors.white,
+              thickness: 2,
+              height: 50,
+              indent: 140,
+              endIndent: 140,
+            ),
+            GestureDetector(
+              onTap: handleDare,
+              child: Text(
+                'DARE',
+                style: TextStyle(
+                  color: Theme.of(context).primaryColor,
+                  fontSize: 40,
+                  // fontFamily: 'Nunito'
+                  fontFamily: 'Montserrat'
+                ),
+              ),
+              
+            ),
           ],
         ),
       ),
     );
   }
 }
+
