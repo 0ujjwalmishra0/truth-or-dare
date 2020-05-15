@@ -14,8 +14,10 @@ class MyApp extends StatelessWidget {
       home: Game(),
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        fontFamily: 'Montserrat',
           backgroundColor: Colors.black,
-          primaryColor: Colors.pink,
+          primaryColor: Colors.pink[600],
+          accentColor: Colors.pink,
           primaryTextTheme: TextTheme(
               headline1: TextStyle(color: Theme.of(context).primaryColor,fontSize: 30))),
     );

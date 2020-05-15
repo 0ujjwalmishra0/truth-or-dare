@@ -13,8 +13,7 @@ class Game extends StatefulWidget {
 class _GameState extends State<Game> {
   @override
   Widget build(BuildContext context) {
-    // print(truth[index]['id']);
-    // print(truth[index]['que']);
+
 
     handleTruth() {
       print('truth tappped!');
