@@ -27,7 +27,7 @@ class _SecondPageState extends State<SecondPage> {
     String text = widget.isDare == true ? 'Dare' : 'Truth';
     generateQue() {
       var random = Random();
-      index = random.nextInt(5);
+      index = random.nextInt(150);
 
       print(index);
       setState(() {
@@ -46,39 +46,43 @@ class _SecondPageState extends State<SecondPage> {
     }
 
     Widget buildText() {
-      return  Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Divider(
-                thickness: 1.8,
-                color: Theme.of(context).primaryColor,
-                indent: 160,
-                endIndent: 160,
-                height: 30,
-              ),
-              Text(
-                question ?? 'Press refresh',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20,
-
+      return  Container(
+        margin: EdgeInsets.symmetric(horizontal: 20),
+        child: Column(
+          
+          mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Divider(
+                  thickness: 1.8,
+                  color: Theme.of(context).primaryColor,
+                  indent: 120,
+                  endIndent: 120,
+                  height: 45,
                 ),
-              ),
-              Divider(
-                thickness: 1.8,
-                color: Theme.of(context).primaryColor,
-                indent: 160,
-                endIndent: 160,
-                height: 30,
-              ),
-            ],
+                Text(
+                  question ?? 'Press refresh',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                Divider(
+                  thickness: 1.8,
+                  color: Theme.of(context).primaryColor,
+                  indent: 120,
+                  endIndent: 120,
+                  height: 45,
+                ),
+              ],
+        ),
       );
     }
 
     return Scaffold(
       backgroundColor: Theme.of(context).backgroundColor,
       appBar: AppBar(
-        title: Text(text,style: TextStyle(fontSize: 25,color: Theme.of(context).primaryColor),),
+        title: Text(text,style: TextStyle(fontSize: 28,color: Theme.of(context).primaryColor),),
         backgroundColor: Colors.black54,
         centerTitle: true,
         leading: BackButton(
@@ -95,14 +99,14 @@ class _SecondPageState extends State<SecondPage> {
               Align(
                 alignment: Alignment.bottomCenter,
                               child: Container(
-                                height: 40,
-                  margin: EdgeInsets.all(30),
+                                height: 55,
+                  margin: EdgeInsets.all(45),
                   child: FloatingActionButton(
                     
                     child: Icon(
                         Icons.refresh,
                         color: Colors.white,
-                        size: 24,
+                        size: 28,
                       ),
                       onPressed: generateQue),
                 ),

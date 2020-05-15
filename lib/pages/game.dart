@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:truth_or_dare/pages/secondPage.dart';
 
 
@@ -18,13 +19,13 @@ class _GameState extends State<Game> {
     handleTruth() {
       print('truth tappped!');
       isTruth = true;
-      Navigator.of(context).push(MaterialPageRoute(builder: (context)=> SecondPage(isDare: false,isTruth: true,)));
+      Navigator.push(context,PageTransition(type: PageTransitionType.rightToLeftWithFade,child: SecondPage(isDare: false,isTruth: true), ));
     }
 
     handleDare() {
       print('Dare tappped!');
       isDare = true;
-      Navigator.of(context).push(MaterialPageRoute(builder: (context)=> SecondPage(isDare: true,isTruth: false,)));
+      Navigator.push(context,PageTransition(type: PageTransitionType.rightToLeftWithFade,child: SecondPage(isDare: true,isTruth: false), ));
     }
 
     return Scaffold(
