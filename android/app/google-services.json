@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "799161031842",
+    "firebase_url": "https://truth-or-dare-d9e47.firebaseio.com",
+    "project_id": "truth-or-dare-d9e47",
+    "storage_bucket": "truth-or-dare-d9e47.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:799161031842:android:b7e81d1a735fa159b08bfb",
+        "android_client_info": {
+          "package_name": "com.example.truth_or_dare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "799161031842-drk63dbagvk1ce3mkofrp22ic1n6haon.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.truth_or_dare",
+            "certificate_hash": "bfc4243901f8a2066ebf31aa176cf682bdf09eb4"
+          }
+        },
+        {
+          "client_id": "799161031842-ef4tgd2k9vjgf6ctn4g4gsinq5cervuk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYl4lpafmKrjhLzs4Y1KWGaEmOKgniExY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "799161031842-ef4tgd2k9vjgf6ctn4g4gsinq5cervuk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
