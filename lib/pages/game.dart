@@ -39,11 +39,13 @@ class _GameState extends State<Game> {
               onTap: handleTruth,
               child: Text(
                 'TRUTH',
-                style: TextStyle(
-                  color: Theme.of(context).primaryColor,
-                  fontSize: 40,
-                  fontFamily: 'Montserrat'
-                ),
+                style: Theme.of(context).textTheme.headline2,
+                // TextStyle(
+                //   color: Theme.of(context).primaryColor,
+                //   fontSize: 40,
+                //   fontFamily: 'Montserrat',
+                  
+                // ),
               ),
             ),
             Divider(
@@ -57,12 +59,7 @@ class _GameState extends State<Game> {
               onTap: handleDare,
               child: Text(
                 'DARE',
-                style: TextStyle(
-                  color: Theme.of(context).primaryColor,
-                  fontSize: 40,
-                  // fontFamily: 'Nunito'
-                  fontFamily: 'Montserrat'
-                ),
+                style: Theme.of(context).textTheme.headline2,
               ),
               
             ),
